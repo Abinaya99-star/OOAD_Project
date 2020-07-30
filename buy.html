@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Foreign Trading System</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style type="text/css">
+  body{
+ background-image:linear-gradient(to right,#a517ba,#5f1782);
+    background-size:cover;
+    background-position:center;
+    color: black;
+    font-style: bold;
+  }
+  form{
+    margin-top: 2%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  button{
+    box-shadow: none;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  background-image:linear-gradient(to right,#a517ba,#5f1782);
+  }
+  .titl{
+    color: white;
+  }
+  .titl::before
+  {
+    content: '';
+  background: white;
+  height: 5px;
+  width:200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translateY(63px);
+  }
+  .titl::after
+  {
+    content: '';
+  background: white;
+  height: 10px;
+  width:50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translateY(8px);
+  }
+  </style>
+</head>
+<body>
+	<section id="nav-bar">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"><img src="trade.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="prod.html">PRODUCT CATALOG</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="wishlist.jsp">YOUR WISHLIST</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">LOG OUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</section>
+<section id="log">
+  <div class="container text-center">
+    <div id="cent">
+          <h1 class="titl text-center">BUY</h1>
+  </div><br>
+  <form name="logForm" action = "http://localhost:8080/sample/buy2.java" method = "GET">
+  <div class="form-group">
+  <label>Enter the no of stocks requires</label>
+  <input type="number" name="stock" id="stock" required><br><br>
+  </div>
+  <button type="submit">Generate Bill</button><br><br>
+</form>
+</div>
+</section>

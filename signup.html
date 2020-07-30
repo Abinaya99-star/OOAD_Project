@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Foreign Trading System</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style type="text/css">
+  body{
+ background-image:linear-gradient(to right,#a517ba,#5f1782);
+    background-size:cover;
+    background-position:center;
+    color: black;
+    font-style: bold;
+  }
+  form{
+    margin-top: 2%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  button{
+    box-shadow: none;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  background-image:linear-gradient(to right,#a517ba,#5f1782);
+  }
+  .titl{
+    color: white;
+  }
+  .titl::before
+  {
+    content: '';
+  background: white;
+  height: 5px;
+  width:200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translateY(63px);
+  }
+  .titl::after
+  {
+    content: '';
+  background: white;
+  height: 10px;
+  width:50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transform: translateY(8px);
+  }
+  </style>
+</head>
+<body>
+<section id="nav-bar">
+	<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"><img src="trade.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#banner">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#services">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#login">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#aboutus">ABOUT US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#social-media">CONTACT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</section>
+<!--------------------------------signup----------------->
+<section id="sign">
+  <div class="container text-center">
+    <div id="cent">
+          <h1 class="titl text-center">SIGN UP</h1>
+<form name="RegForm" action = "http://localhost:8080/sample/signup" method = "GET">
+  <div class="form-group">
+  <label>Name</label>
+  <input type="text" name="Name" onkeyup="this.value = this.value.replace(/[^A-Za-z]/,'')" id="Name"><br>
+</div>
+<div class="form-group">
+  <label>Age</label>
+  <input type="text" name="Age" maxlength="2" id="Age"><br>
+</div>
+<div class="form-group">
+  <label>DOB</label>
+  <input type="date" name="date" id="date"><br>
+</div>
+  <div class="form-group">
+  <label>Mail id</label>
+  <input type="email" name="EMail" id="EMail"><br>
+  </div>
+  <div class="form-group">
+  <label>Phone Number</label>
+  <input type="number" name="Telephone"  minlength="10" maxlength="10" onkeyup="this.value = this.value.replace(/[^0-9]/,'')" id="Telephone"><br>
+  </div>
+  <div class="form-group">
+  <label>Password</label>
+  <input type="Password" name="password" id="password"><br>
+  </div>
+  <div class="form-group">
+  <label>Re-enter Password</label>
+  <input type="Password" name="reenterpass" id="reenterpass"><br>
+  </div>
+  <button type="submit" onclick="return validate()">Submit</button>
+  <br>
+  <h5>Already Registered?<button href="login.html" formaction="login.html">Login</button></h5>
+  
+</form>
+    </div>
+  </div>
+</section>
+
+<!----------------------------------VALIDATE--------------------------->
+<script>
+  function validate() 
+{ 
+var name = document.getElementById("Name");
+var age = document.getElementById("Age"); 
+var email = document.getElementById("EMail"); 
+var phone = document.getElementById("Telephone"); 
+var password = document.getElementById("password"); 
+var repass = document.getElementById("reenterpass"); 
+var dob = document.getElementById("date");
+if (name.value == "") 
+{ 
+window.alert("Please enter your name."); 
+name.focus(); 
+return false; 
+} 
+var letters = /^[A-Za-z]+$/;
+if (!(name.value.match(letters)))
+{
+    window.alert("Please enter a valid name"); 
+name.focus(); 
+return false; 
+}
+if(age.value == "")
+{
+  window.alert("Please enter your age");
+  age.focus();
+  return false;
+}
+if (dob.value == "")
+{
+window.alert("Please enter a date");
+dob.focus();
+return false;
+}
+if (email.value == "")  
+{ 
+window.alert("Please enter your e-mail address."); 
+email.focus(); 
+return false; 
+} 
+var emm=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/;
+if (!email.value.match(emm))
+{
+window.alert("Please enter a valid email address");
+email.focus();
+return false;
+}
+if (phone.value == "")  
+{ 
+window.alert("Please enter your phone number."); 
+phone.focus(); 
+return false; 
+} 
+var phoneno = /^\d{10}$/;
+    if(!(phone.value.match(phoneno)))
+    {
+    window.alert("Please enter a valid phone number."); 
+phone.focus(); 
+return false; 
+    }
+if(phone.value.length<10 || phone.value.length>10)
+{
+window.alert("Please enter a 10 digit phone no"); 
+phone.focus(); 
+return false; 
+} 
+var password1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/;
+if(password.value=="")
+{
+  window.alert("Please enter your password");
+  password.focus();
+  return false;
+}
+if(!password.value.match(password1)){
+        window.alert("Your password should contain Lowercase,Uppercase,number and a special character of length 8-12")
+        return false;
+      }
+    if(repass.value=="")
+    {
+      window.alert("Please enter your password again");
+      repass.focus();
+      return false;
+    }
+if(password.value!=repass.value)
+{
+      window.alert("Password didn't match");
+      repass.focus();
+      return false;
+}
+ return true; 
+
+}
+</script> 
+
+
+</body>
+</html>
